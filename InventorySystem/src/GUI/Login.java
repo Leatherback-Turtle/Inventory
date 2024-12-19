@@ -48,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         icon.setBackground(new java.awt.Color(64, 64, 64));
         icon.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/inventory1.png"))); // NOI18N
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/inventory1.png"))); // NOI18N
         icon.setOpaque(true);
 
         tfUser.setBackground(new java.awt.Color(255, 255, 255));
@@ -71,7 +71,7 @@ public class Login extends javax.swing.JFrame {
 
         buttOk.setBackground(new java.awt.Color(255, 255, 255));
         buttOk.setForeground(new java.awt.Color(255, 255, 255));
-        buttOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/arr.png"))); // NOI18N
+        buttOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/arr.png"))); // NOI18N
         buttOk.setOpaque(true);
         buttOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -69,7 +69,7 @@ public class Register extends javax.swing.JPanel {
 
         buttOk.setBackground(new java.awt.Color(255, 255, 255));
         buttOk.setForeground(new java.awt.Color(255, 255, 255));
-        buttOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/arr.png"))); // NOI18N
+        buttOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/arr.png"))); // NOI18N
         buttOk.setOpaque(true);
         buttOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
