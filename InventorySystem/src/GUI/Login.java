@@ -1,11 +1,20 @@
 package GUI;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import com.mysql.cj.protocol.Resultset;
 
 /**
  *
  * @author Adrian
  */
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.*;
 
 public class Login extends javax.swing.JFrame {
 
@@ -33,7 +42,7 @@ public class Login extends javax.swing.JFrame {
         labPass = new javax.swing.JLabel();
         labLog = new javax.swing.JLabel();
         buttOk = new javax.swing.JButton();
-        buttReg = new javax.swing.JButton();
+        BtRegister = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
         pfPass = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
@@ -51,25 +60,19 @@ public class Login extends javax.swing.JFrame {
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/inventory1.png"))); // NOI18N
         icon.setOpaque(true);
 
-        tfUser.setBackground(new java.awt.Color(255, 255, 255));
         tfUser.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        tfUser.setForeground(new java.awt.Color(0, 0, 0));
 
         labUser.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        labUser.setForeground(new java.awt.Color(0, 0, 0));
         labUser.setLabelFor(tfUser);
         labUser.setText("USERNAME");
 
         labPass.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        labPass.setForeground(new java.awt.Color(0, 0, 0));
         labPass.setText("PASSWORD");
 
         labLog.setBackground(new java.awt.Color(255, 255, 255));
         labLog.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        labLog.setForeground(new java.awt.Color(0, 0, 0));
         labLog.setText("Login");
 
-        buttOk.setBackground(new java.awt.Color(255, 255, 255));
         buttOk.setForeground(new java.awt.Color(255, 255, 255));
         buttOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/arr.png"))); // NOI18N
         buttOk.setOpaque(true);
@@ -79,19 +82,19 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        buttReg.setBackground(new java.awt.Color(255, 255, 255));
-        buttReg.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        buttReg.setForeground(new java.awt.Color(0, 0, 0));
-        buttReg.setText("Register");
-        buttReg.setOpaque(true);
+        BtRegister.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        BtRegister.setText("Register");
+        BtRegister.setOpaque(true);
+        BtRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtRegisterActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBox1.setText("Remember Me");
 
-        pfPass.setBackground(new java.awt.Color(255, 255, 255));
         pfPass.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        pfPass.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -119,7 +122,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(buttOk))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addComponent(buttReg, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BtRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -142,7 +145,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(120, 120, 120)
                 .addComponent(buttOk)
                 .addGap(62, 62, 62)
-                .addComponent(buttReg)
+                .addComponent(BtRegister)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -190,7 +193,57 @@ public class Login extends javax.swing.JFrame {
 
     private void buttOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttOkActionPerformed
         // TODO add your handling code here:
+         Dashboard dash = new Dashboard(); // Create an instance of the Register panel
+         this.getContentPane().removeAll(); // Remove all existing components
+                 this.setContentPane(dash); // Set the Register panel as the content pane
+                 this.revalidate(); // Refresh the frame
+                 this.repaint(); // Redraw the frame
+ 
+    /*
+        try {
+               String username = tfUser.getText();
+                String password = pfPass.getText();
+            Class.forName("com.mysql.cj.jdbc.Driver");
+                String url = "jdbc:mysql://localhost:3306/login";
+                String user = "admin";
+                String pass = "1234";
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            Statement stm = conn.createStatement();
+            String sql = "select * from login where Username ='"+username+"' and Password = '"+password+"'";
+            ResultSet rs = stm.executeQuery(sql);
+            
+                 
+            
+            if(rs.next()){
+                
+    
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Username or Password is incorrect");
+                tfUser.setText("");
+                pfPass.setText("");
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+  
+       */
     }//GEN-LAST:event_buttOkActionPerformed
+
+    private void BtRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegisterActionPerformed
+        // TODO add your handling code here:
+           
+       // Clear the current content pane and replace it with the registration panel
+    this.getContentPane().removeAll(); // Remove all existing components
+    Register regPanel = new Register(); // Create an instance of the Register panel
+    this.setContentPane(regPanel); // Set the Register panel as the content pane
+    this.revalidate(); // Refresh the frame
+    this.repaint(); // Redraw the frame
+    }//GEN-LAST:event_BtRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,7 +273,7 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         FlatLightLaf.setup();
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
@@ -229,8 +282,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtRegister;
     private javax.swing.JButton buttOk;
-    private javax.swing.JButton buttReg;
     private javax.swing.JLabel icon;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;

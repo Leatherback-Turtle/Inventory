@@ -8,6 +8,9 @@ package GUI;
  *
  * @author Adrian
  */
+import GUI.Login;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 public class Dashboard extends javax.swing.JPanel {
 
     /**
@@ -27,15 +30,15 @@ public class Dashboard extends javax.swing.JPanel {
     private void initComponents() {
 
         navPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        BtProducts = new javax.swing.JButton();
+        BtStocks = new javax.swing.JButton();
+        BtCustomers = new javax.swing.JButton();
+        BtSuppliers = new javax.swing.JButton();
+        BtSales = new javax.swing.JButton();
+        BtOrder = new javax.swing.JButton();
+        BtUsers = new javax.swing.JButton();
+        BtUserLog = new javax.swing.JButton();
+        BtLogout = new javax.swing.JButton();
         labDash = new javax.swing.JLabel();
         displayPanel = new javax.swing.JPanel();
 
@@ -44,99 +47,89 @@ public class Dashboard extends javax.swing.JPanel {
 
         navPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(255, 191, 105));
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("PRODUCTS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtProducts.setBackground(new java.awt.Color(255, 191, 105));
+        BtProducts.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtProducts.setText("PRODUCTS");
+        BtProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtProductsActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 191, 105));
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("CURRENT STOCKS");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtStocks.setBackground(new java.awt.Color(255, 191, 105));
+        BtStocks.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtStocks.setText("CURRENT STOCKS");
+        BtStocks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtStocksActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 191, 105));
-        jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("CUSTOMERS");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        BtCustomers.setBackground(new java.awt.Color(255, 191, 105));
+        BtCustomers.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtCustomers.setText("CUSTOMERS");
+        BtCustomers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                BtCustomersActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(255, 191, 105));
-        jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("SUPPLIERS");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        BtSuppliers.setBackground(new java.awt.Color(255, 191, 105));
+        BtSuppliers.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtSuppliers.setText("SUPPLIERS");
+        BtSuppliers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                BtSuppliersActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 191, 105));
-        jButton5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("SALES");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        BtSales.setBackground(new java.awt.Color(255, 191, 105));
+        BtSales.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtSales.setText("SALES");
+        BtSales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                BtSalesActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(255, 191, 105));
-        jButton6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("ORDER");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        BtOrder.setBackground(new java.awt.Color(255, 191, 105));
+        BtOrder.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtOrder.setText("ORDER");
+        BtOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                BtOrderActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(255, 191, 105));
-        jButton7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setText("USERS");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        BtUsers.setBackground(new java.awt.Color(255, 191, 105));
+        BtUsers.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtUsers.setText("USERS");
+        BtUsers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                BtUsersActionPerformed(evt);
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(255, 191, 105));
-        jButton8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(0, 0, 0));
-        jButton8.setText("USER LOG");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        BtUserLog.setBackground(new java.awt.Color(255, 191, 105));
+        BtUserLog.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtUserLog.setText("USER LOG");
+        BtUserLog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                BtUserLogActionPerformed(evt);
             }
         });
 
-        jButton9.setBackground(new java.awt.Color(255, 159, 28));
-        jButton9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(0, 0, 0));
-        jButton9.setText("LOGOUT");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        BtLogout.setBackground(new java.awt.Color(255, 159, 28));
+        BtLogout.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        BtLogout.setText("LOGOUT");
+        BtLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                BtLogoutActionPerformed(evt);
             }
         });
 
         labDash.setBackground(new java.awt.Color(255, 255, 255));
         labDash.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        labDash.setForeground(new java.awt.Color(0, 0, 0));
         labDash.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         labDash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/dash.png"))); // NOI18N
         labDash.setText("Dashboard");
@@ -149,23 +142,23 @@ public class Dashboard extends javax.swing.JPanel {
                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(navPanelLayout.createSequentialGroup()
                         .addGap(136, 136, 136)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(navPanelLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labDash)
                             .addGroup(navPanelLayout.createSequentialGroup()
                                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(BtUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtSales, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(45, 45, 45)
                                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(BtStocks, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtSuppliers, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtUserLog, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         navPanelLayout.setVerticalGroup(
@@ -175,22 +168,22 @@ public class Dashboard extends javax.swing.JPanel {
                 .addComponent(labDash)
                 .addGap(88, 88, 88)
                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtStocks, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtSuppliers, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtSales, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtUserLog, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(76, 76, 76)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(83, Short.MAX_VALUE))
         );
 
@@ -227,54 +220,82 @@ public class Dashboard extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtProductsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Products products = new Products();
+        
+        // Set the dashboard panel to the displayPanel in the main JFrame
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        mainFrame.setContentPane(products);
+        mainFrame.revalidate();
+        mainFrame.repaint();
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BtProductsActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void BtStocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtStocksActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+       Stocks stock = new Stocks();
+        
+       JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        mainFrame.setContentPane(stock);
+        mainFrame.revalidate();
+        mainFrame.repaint();
+    }//GEN-LAST:event_BtStocksActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void BtCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCustomersActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_BtCustomersActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void BtSuppliersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSuppliersActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        
+    }//GEN-LAST:event_BtSuppliersActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void BtSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSalesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        
+    }//GEN-LAST:event_BtSalesActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void BtOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_BtOrderActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void BtUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtUsersActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+        
+        Users user = new Users();
+        
+       JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        mainFrame.setContentPane(user);
+        mainFrame.revalidate();
+        mainFrame.repaint();
+    }//GEN-LAST:event_BtUsersActionPerformed
+
+    private void BtUserLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtUserLogActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtUserLogActionPerformed
+
+    private void BtLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtLogoutActionPerformed
+        // TODO add your handling code here:
+         Login loginScreen = new Login();
+        
+        // Set the Login JFrame visible
+        loginScreen.setVisible(true);
+    }//GEN-LAST:event_BtLogoutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtCustomers;
+    private javax.swing.JButton BtLogout;
+    private javax.swing.JButton BtOrder;
+    private javax.swing.JButton BtProducts;
+    private javax.swing.JButton BtSales;
+    private javax.swing.JButton BtStocks;
+    private javax.swing.JButton BtSuppliers;
+    private javax.swing.JButton BtUserLog;
+    private javax.swing.JButton BtUsers;
     private javax.swing.JPanel displayPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel labDash;
     private javax.swing.JPanel navPanel;
     // End of variables declaration//GEN-END:variables

@@ -8,6 +8,8 @@ package GUI;
  *
  * @author Adrian
  */
+import javax.swing.*;
+import com.formdev.flatlaf.FlatLightLaf;
 public class Products extends javax.swing.JPanel {
 
     /**
@@ -45,7 +47,6 @@ public class Products extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         codeText = new javax.swing.JTextField();
         categText = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         quantityText = new javax.swing.JTextField();
         costText = new javax.swing.JTextField();
         sellText = new javax.swing.JTextField();
@@ -66,9 +67,7 @@ public class Products extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(255, 191, 105));
         jLabel9.setText("Search:");
 
-        searchText.setBackground(new java.awt.Color(255, 255, 255));
         searchText.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        searchText.setForeground(new java.awt.Color(0, 0, 0));
         searchText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchTextKeyReleased(evt);
@@ -77,7 +76,6 @@ public class Products extends javax.swing.JPanel {
 
         refreshButton.setBackground(new java.awt.Color(255, 191, 105));
         refreshButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        refreshButton.setForeground(new java.awt.Color(0, 0, 0));
         refreshButton.setText("REFRESH");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,10 +84,8 @@ public class Products extends javax.swing.JPanel {
         });
 
         jScrollPane1.setBackground(new java.awt.Color(255, 191, 105));
-        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
 
         prodTable.setBackground(new java.awt.Color(255, 159, 28));
-        prodTable.setForeground(new java.awt.Color(0, 0, 0));
         prodTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -104,16 +100,13 @@ public class Products extends javax.swing.JPanel {
         jScrollPane1.setViewportView(prodTable);
 
         entryPanel.setBackground(new java.awt.Color(255, 159, 28));
-        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Enter Product Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        entryPanel.setForeground(new java.awt.Color(0, 0, 0));
+        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter Product Details"));
 
         suppCombo.setBackground(new java.awt.Color(255, 185, 65));
-        suppCombo.setForeground(new java.awt.Color(0, 0, 0));
         suppCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a supplier" }));
         suppCombo.setToolTipText("Select a supplier");
 
         addSuppButton.setBackground(new java.awt.Color(255, 185, 65));
-        addSuppButton.setForeground(new java.awt.Color(0, 0, 0));
         addSuppButton.setText("Click to add a New Supplier");
         addSuppButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addSuppButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,47 +115,31 @@ public class Products extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Product Code:");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Product Name:");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Date:");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Quantity:");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Cost Price:");
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Selling Price:");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Brand:");
 
         codeText.setBackground(new java.awt.Color(255, 185, 65));
-        codeText.setForeground(new java.awt.Color(0, 0, 0));
 
         categText.setBackground(new java.awt.Color(255, 185, 65));
-        categText.setForeground(new java.awt.Color(0, 0, 0));
-
-        jDateChooser1.setBackground(new java.awt.Color(255, 185, 65));
-        jDateChooser1.setForeground(new java.awt.Color(0, 0, 0));
 
         quantityText.setBackground(new java.awt.Color(255, 185, 65));
-        quantityText.setForeground(new java.awt.Color(0, 0, 0));
 
         costText.setBackground(new java.awt.Color(255, 185, 65));
-        costText.setForeground(new java.awt.Color(0, 0, 0));
 
         sellText.setBackground(new java.awt.Color(255, 185, 65));
-        sellText.setForeground(new java.awt.Color(0, 0, 0));
 
         brandText.setBackground(new java.awt.Color(255, 185, 65));
-        brandText.setForeground(new java.awt.Color(0, 0, 0));
         brandText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brandTextActionPerformed(evt);
@@ -170,7 +147,6 @@ public class Products extends javax.swing.JPanel {
         });
 
         addButton.setBackground(new java.awt.Color(255, 185, 65));
-        addButton.setForeground(new java.awt.Color(0, 0, 0));
         addButton.setText("Add");
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +156,6 @@ public class Products extends javax.swing.JPanel {
         });
 
         editButton.setBackground(new java.awt.Color(255, 185, 65));
-        editButton.setForeground(new java.awt.Color(0, 0, 0));
         editButton.setText("Edit");
         editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +165,6 @@ public class Products extends javax.swing.JPanel {
         });
 
         deleteButton.setBackground(new java.awt.Color(255, 185, 65));
-        deleteButton.setForeground(new java.awt.Color(0, 0, 0));
         deleteButton.setText("Delete");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +175,6 @@ public class Products extends javax.swing.JPanel {
 
         clearButton.setBackground(new java.awt.Color(255, 185, 65));
         clearButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        clearButton.setForeground(new java.awt.Color(0, 0, 0));
         clearButton.setText("CLEAR");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -210,11 +183,9 @@ public class Products extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Category:");
 
         nameText.setBackground(new java.awt.Color(255, 185, 65));
-        nameText.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout entryPanelLayout = new javax.swing.GroupLayout(entryPanel);
         entryPanel.setLayout(entryPanelLayout);
@@ -246,7 +217,6 @@ public class Products extends javax.swing.JPanel {
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                                     .addComponent(quantityText)
                                     .addComponent(categText)))
                             .addGroup(entryPanelLayout.createSequentialGroup()
@@ -288,10 +258,8 @@ public class Products extends javax.swing.JPanel {
                 .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(categText, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGap(16, 16, 16)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(quantityText, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,7 +296,7 @@ public class Products extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(entryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(entryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 259, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -467,7 +435,6 @@ public class Products extends javax.swing.JPanel {
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
     private javax.swing.JPanel entryPanel;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

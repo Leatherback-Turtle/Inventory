@@ -4,17 +4,23 @@
  */
 package GUI;
 
+import javax.swing.*;
+import java.util.*;
+
 /**
  *
  * @author Adrian
  */
+
 public class Register extends javax.swing.JPanel {
+private JPanel displayPanel;
 
     /**
      * Creates new form Register
      */
     public Register() {
         initComponents();
+         this.displayPanel = displayPanel;
     }
 
     /**
@@ -33,47 +39,32 @@ public class Register extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        buttOk = new javax.swing.JButton();
+        BtOk = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setForeground(new java.awt.Color(0, 0, 0));
 
         labReg.setBackground(new java.awt.Color(255, 255, 255));
         labReg.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        labReg.setForeground(new java.awt.Color(0, 0, 0));
         labReg.setText("REGISTER");
 
         labUser1.setBackground(new java.awt.Color(255, 255, 255));
         labUser1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        labUser1.setForeground(new java.awt.Color(0, 0, 0));
         labUser1.setText("USERNAME");
-
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("PASSWORD");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("CONFIRM PASSWORD");
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
-
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
-
-        buttOk.setBackground(new java.awt.Color(255, 255, 255));
-        buttOk.setForeground(new java.awt.Color(255, 255, 255));
-        buttOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/arr.png"))); // NOI18N
-        buttOk.setOpaque(true);
-        buttOk.addActionListener(new java.awt.event.ActionListener() {
+        BtOk.setForeground(new java.awt.Color(255, 255, 255));
+        BtOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/arr.png"))); // NOI18N
+        BtOk.setOpaque(true);
+        BtOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttOkActionPerformed(evt);
+                BtOkActionPerformed(evt);
             }
         });
 
@@ -85,7 +76,7 @@ public class Register extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(298, 298, 298)
-                        .addComponent(buttOk))
+                        .addComponent(BtOk))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(271, 271, 271)
                         .addComponent(labReg)))
@@ -119,18 +110,27 @@ public class Register extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
-                .addComponent(buttOk)
+                .addComponent(BtOk)
                 .addContainerGap(328, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttOkActionPerformed
+    private void BtOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtOkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttOkActionPerformed
+  Dashboard dashboard = new Dashboard();
+        
+        // Set the dashboard panel to the displayPanel in the main JFrame
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        mainFrame.setContentPane(dashboard);
+        mainFrame.revalidate();
+        mainFrame.repaint();
 
+    }//GEN-LAST:event_BtOkActionPerformed
+    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttOk;
+    private javax.swing.JButton BtOk;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
@@ -139,4 +139,12 @@ public class Register extends javax.swing.JPanel {
     private javax.swing.JLabel labReg;
     private javax.swing.JLabel labUser1;
     // End of variables declaration//GEN-END:variables
+
+    private Object getContentPane() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setContentPane(Dashboard board) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
