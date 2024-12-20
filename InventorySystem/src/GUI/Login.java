@@ -1,11 +1,19 @@
 package GUI;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import com.mysql.cj.protocol.Resultset;
 
 /**
  *
  * @author Adrian
  */
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class Login extends javax.swing.JFrame {
@@ -187,9 +195,41 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     this.getContentPane().removeAll(); // Remove all existing components
     Dashboard dash = new Dashboard(); // Create an instance of the Register panel
-    this.setContentPane(dash); // Set the Register panel as the content pane
-    this.revalidate(); // Refresh the frame
-    this.repaint(); // Redraw the frame
+    
+    String url = "jdbc:mysql://localhost:3306/login";
+    String user = "admin";
+    String pass = "1234";
+    
+    String username = tfUser.getText();
+    String password = pfPass.getText();
+    
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            Statement stm = conn.createStatement();
+            String sql = "select * from login where Username ='"+username+"' and Password = '"+password+"'";
+            ResultSet rs = stm.executeQuery(sql);
+            
+            if(rs.next()){
+                 this.setContentPane(dash); // Set the Register panel as the content pane
+                 this.revalidate(); // Refresh the frame
+                 this.repaint(); // Redraw the frame
+            }
+            else{
+                
+                
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+  
+    
+    
+   
     
        
     }//GEN-LAST:event_buttOkActionPerformed
