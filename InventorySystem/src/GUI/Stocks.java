@@ -120,13 +120,10 @@ public class Stocks extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextKeyReleased
-        loadSearchData(searchText.getText());
     }//GEN-LAST:event_searchTextKeyReleased
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
-        loadDataSet();
-        loadComboBox();
-        clearButtonActionPerformed(evt);
+     
     }//GEN-LAST:event_refreshButtonActionPerformed
 
 

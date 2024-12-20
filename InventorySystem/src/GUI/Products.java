@@ -8,6 +8,8 @@ package GUI;
  *
  * @author Adrian
  */
+import javax.swing.*;
+import com.formdev.flatlaf.FlatLightLaf;
 public class Products extends javax.swing.JPanel {
 
     /**
@@ -64,9 +66,7 @@ public class Products extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(255, 191, 105));
         jLabel9.setText("Search:");
 
-        searchText.setBackground(new java.awt.Color(255, 255, 255));
         searchText.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        searchText.setForeground(new java.awt.Color(0, 0, 0));
         searchText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchTextKeyReleased(evt);
@@ -75,7 +75,6 @@ public class Products extends javax.swing.JPanel {
 
         refreshButton.setBackground(new java.awt.Color(255, 191, 105));
         refreshButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        refreshButton.setForeground(new java.awt.Color(0, 0, 0));
         refreshButton.setText("REFRESH");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,10 +83,8 @@ public class Products extends javax.swing.JPanel {
         });
 
         jScrollPane1.setBackground(new java.awt.Color(255, 191, 105));
-        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
 
         prodTable.setBackground(new java.awt.Color(255, 159, 28));
-        prodTable.setForeground(new java.awt.Color(0, 0, 0));
         prodTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -102,16 +99,13 @@ public class Products extends javax.swing.JPanel {
         jScrollPane1.setViewportView(prodTable);
 
         entryPanel.setBackground(new java.awt.Color(255, 159, 28));
-        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Enter Product Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        entryPanel.setForeground(new java.awt.Color(0, 0, 0));
+        entryPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter Product Details"));
 
         suppCombo.setBackground(new java.awt.Color(255, 185, 65));
-        suppCombo.setForeground(new java.awt.Color(0, 0, 0));
         suppCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a supplier" }));
         suppCombo.setToolTipText("Select a supplier");
 
         addSuppButton.setBackground(new java.awt.Color(255, 185, 65));
-        addSuppButton.setForeground(new java.awt.Color(0, 0, 0));
         addSuppButton.setText("Click to add a New Supplier");
         addSuppButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addSuppButton.addActionListener(new java.awt.event.ActionListener() {
@@ -120,28 +114,28 @@ public class Products extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Product Code:");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Product Name:");
 
+<<<<<<< HEAD
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+=======
+        jLabel4.setText("Date:");
+
+>>>>>>> 0314bd110237a7434b91a7b214cf462ffb802b5d
         jLabel5.setText("Quantity:");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Cost Price:");
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Selling Price:");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Brand:");
 
         codeText.setBackground(new java.awt.Color(255, 185, 65));
-        codeText.setForeground(new java.awt.Color(0, 0, 0));
 
         categText.setBackground(new java.awt.Color(255, 185, 65));
+<<<<<<< HEAD
         categText.setForeground(new java.awt.Color(0, 0, 0));
 
         quantityText.setBackground(new java.awt.Color(255, 185, 65));
@@ -159,12 +153,16 @@ public class Products extends javax.swing.JPanel {
                 costTextActionPerformed(evt);
             }
         });
+=======
+
+        quantityText.setBackground(new java.awt.Color(255, 185, 65));
+
+        costText.setBackground(new java.awt.Color(255, 185, 65));
+>>>>>>> 0314bd110237a7434b91a7b214cf462ffb802b5d
 
         sellText.setBackground(new java.awt.Color(255, 185, 65));
-        sellText.setForeground(new java.awt.Color(0, 0, 0));
 
         brandText.setBackground(new java.awt.Color(255, 185, 65));
-        brandText.setForeground(new java.awt.Color(0, 0, 0));
         brandText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brandTextActionPerformed(evt);
@@ -172,7 +170,6 @@ public class Products extends javax.swing.JPanel {
         });
 
         addButton.setBackground(new java.awt.Color(255, 185, 65));
-        addButton.setForeground(new java.awt.Color(0, 0, 0));
         addButton.setText("Add");
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -182,7 +179,6 @@ public class Products extends javax.swing.JPanel {
         });
 
         editButton.setBackground(new java.awt.Color(255, 185, 65));
-        editButton.setForeground(new java.awt.Color(0, 0, 0));
         editButton.setText("Edit");
         editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +188,6 @@ public class Products extends javax.swing.JPanel {
         });
 
         deleteButton.setBackground(new java.awt.Color(255, 185, 65));
-        deleteButton.setForeground(new java.awt.Color(0, 0, 0));
         deleteButton.setText("Delete");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +198,6 @@ public class Products extends javax.swing.JPanel {
 
         clearButton.setBackground(new java.awt.Color(255, 185, 65));
         clearButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        clearButton.setForeground(new java.awt.Color(0, 0, 0));
         clearButton.setText("CLEAR");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -212,11 +206,9 @@ public class Products extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Category:");
 
         nameText.setBackground(new java.awt.Color(255, 185, 65));
-        nameText.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout entryPanelLayout = new javax.swing.GroupLayout(entryPanel);
         entryPanel.setLayout(entryPanelLayout);
@@ -263,9 +255,15 @@ public class Products extends javax.swing.JPanel {
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                                 .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(sellText, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(costText, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+=======
+                                .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(quantityText)
+                                    .addComponent(categText)))
+>>>>>>> 0314bd110237a7434b91a7b214cf462ffb802b5d
                             .addGroup(entryPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -291,10 +289,15 @@ public class Products extends javax.swing.JPanel {
                 .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(categText, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(quantityText, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                .addGap(16, 16, 16)
+                .addComponent(jLabel4)
+>>>>>>> 0314bd110237a7434b91a7b214cf462ffb802b5d
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(entryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -327,7 +330,11 @@ public class Products extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                         .addComponent(entryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 260, Short.MAX_VALUE)
+=======
+                        .addComponent(entryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 259, Short.MAX_VALUE)
+>>>>>>> 0314bd110237a7434b91a7b214cf462ffb802b5d
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -364,85 +371,31 @@ public class Products extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextKeyReleased
-        loadSearchData(searchText.getText());
     }//GEN-LAST:event_searchTextKeyReleased
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
-        loadDataSet();
-        loadComboBox();
         clearButtonActionPerformed(evt);
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void addSuppButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSuppButtonActionPerformed
-        dashboard.addSuppPage();
+        
     }//GEN-LAST:event_addSuppButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        productDTO = new ProductDTO();
-        if (categText.getText().equals("") || costText.getText().equals("")
-            || sellText.getText().equals("") || brandText.getText().equals(""))
-        JOptionPane.showMessageDialog(null, "Please enter all the required details.");
-        else {
-            productDTO.setProdCode(codeText.getText());
-            productDTO.setProdName(categText.getText());
-            productDTO.setDate(jDateChooser1.getDateFormatString());
-            productDTO.setQuantity(Integer.parseInt(quantityText.getText()));
-            productDTO.setCostPrice(Double.parseDouble(costText.getText()));
-            productDTO.setSellPrice(Double.parseDouble(sellText.getText()));
-            productDTO.setBrand(brandText.getText());
-            productDTO.setUserID(userID);
 
-            new ProductDAO().addProductDAO(productDTO);
-            loadDataSet();
-        }
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        if (productTable.getSelectedRow()<0)
-        JOptionPane.showMessageDialog(null, "Please select product from the table.");
-        else{
-            productDTO = new ProductDTO();
-            if (categText.getText().equals("") || costText.getText().equals("")
-                || sellText.getText().equals("") || brandText.getText().equals(""))
-            JOptionPane.showMessageDialog(null, "Please enter all the required details.");
-            else {
-                productDTO.setProdCode(codeText.getText());
-                productDTO.setProdName(categText.getText());
-                productDTO.setDate(jDateChooser1.getDateFormatString());
-                productDTO.setQuantity(Integer.parseInt(quantityText.getText()));
-                productDTO.setCostPrice(Double.parseDouble(costText.getText()));
-                productDTO.setSellPrice(Double.parseDouble(sellText.getText()));
-                productDTO.setBrand(brandText.getText());
-                productDTO.setUserID(userID);
-
-                new ProductDAO().editProdDAO(productDTO);
-            }
-            loadDataSet();
-        }
+     
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        if (productTable.getSelectedRow()<0)
-        JOptionPane.showMessageDialog(null, "Please select product from the table.");
-        else {
-            int opt = JOptionPane.showConfirmDialog(
-                null,
-                "Are you sure you want to delete this product?",
-                "Confirmation",
-                JOptionPane.YES_NO_OPTION);
-            if(opt==JOptionPane.YES_OPTION) {
-                new ProductDAO().deleteProductDAO(
-                    (String) productTable.getValueAt(
-                        productTable.getSelectedRow(),0));
-                loadDataSet();
-            }
-        }
+       
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         codeText.setText("");
         categText.setText("");
-        jDateChooser1.setDate(null);
         quantityText.setText("");
         costText.setText("");
         sellText.setText("");
