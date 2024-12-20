@@ -185,7 +185,11 @@ public class Login extends javax.swing.JFrame {
 
     private void buttOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttOkActionPerformed
         // TODO add your handling code here:
-
+    this.getContentPane().removeAll(); // Remove all existing components
+    Dashboard dash = new Dashboard(); // Create an instance of the Register panel
+    this.setContentPane(dash); // Set the Register panel as the content pane
+    this.revalidate(); // Refresh the frame
+    this.repaint(); // Redraw the frame
     
        
     }//GEN-LAST:event_buttOkActionPerformed
