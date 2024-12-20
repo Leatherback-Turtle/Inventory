@@ -198,8 +198,7 @@ public class Login extends javax.swing.JFrame {
                  this.setContentPane(dash); // Set the Register panel as the content pane
                  this.revalidate(); // Refresh the frame
                  this.repaint(); // Redraw the frame
- 
-    /*
+                
         try {
                String username = tfUser.getText();
                 String password = pfPass.getText();
@@ -215,7 +214,10 @@ public class Login extends javax.swing.JFrame {
                  
             
             if(rs.next()){
-                
+            this.getContentPane().removeAll(); // Remove all existing components
+                 this.setContentPane(dash); // Set the Register panel as the content pane
+                 this.revalidate(); // Refresh the frame
+                 this.repaint(); // Redraw the frame
     
             }
             else{
