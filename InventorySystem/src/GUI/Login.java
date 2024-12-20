@@ -193,31 +193,35 @@ public class Login extends javax.swing.JFrame {
 
     private void buttOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttOkActionPerformed
         // TODO add your handling code here:
-    this.getContentPane().removeAll(); // Remove all existing components
-    Dashboard dash = new Dashboard(); // Create an instance of the Register panel
-    
-    String url = "jdbc:mysql://localhost:3306/login";
-    String user = "admin";
-    String pass = "1234";
-    
-    String username = tfUser.getText();
-    String password = pfPass.getText();
-    
+         Dashboard dash = new Dashboard(); // Create an instance of the Register panel
+         this.getContentPane().removeAll(); // Remove all existing components
+                 this.setContentPane(dash); // Set the Register panel as the content pane
+                 this.revalidate(); // Refresh the frame
+                 this.repaint(); // Redraw the frame
+ 
+    /*
         try {
+               String username = tfUser.getText();
+                String password = pfPass.getText();
             Class.forName("com.mysql.cj.jdbc.Driver");
+                String url = "jdbc:mysql://localhost:3306/login";
+                String user = "admin";
+                String pass = "1234";
             Connection conn = DriverManager.getConnection(url,user,pass);
             Statement stm = conn.createStatement();
             String sql = "select * from login where Username ='"+username+"' and Password = '"+password+"'";
             ResultSet rs = stm.executeQuery(sql);
             
+                 
+            
             if(rs.next()){
-                 this.setContentPane(dash); // Set the Register panel as the content pane
-                 this.revalidate(); // Refresh the frame
-                 this.repaint(); // Redraw the frame
+                
+    
             }
             else{
-                
-                
+                JOptionPane.showMessageDialog(this, "Username or Password is incorrect");
+                tfUser.setText("");
+                pfPass.setText("");
             }
             
         } catch (ClassNotFoundException ex) {
@@ -227,11 +231,7 @@ public class Login extends javax.swing.JFrame {
         }
     
   
-    
-    
-   
-    
-       
+       */
     }//GEN-LAST:event_buttOkActionPerformed
 
     private void BtRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegisterActionPerformed
@@ -273,11 +273,7 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         FlatLightLaf.setup();
-        /* Create and display the form */
-               Register reg = new Register();
-       Login log = new Login();
-       reg.setBounds(50, 50, 700, 500); // Set the size and position of the panel
-       log.add(reg);
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
